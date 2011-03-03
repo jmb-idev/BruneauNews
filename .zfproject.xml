@@ -25,6 +25,7 @@
         <modelFile modelName="Category"/>
         <modelFile modelName="Comment"/>
         <modelFile modelName="News"/>
+        <modelFile modelName="Subscription"/>
       </modelsDirectory>
       <modulesDirectory>
         <moduleDirectory moduleName="admin">
