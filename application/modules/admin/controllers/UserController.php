@@ -13,6 +13,20 @@ class Admin_UserController extends Zend_Controller_Action
         // action body
     }
 
+    public function createAction()
+    {
+        // action body
+    }
+
+    public function updateAction()
+    {
+        // action body
+    }
+
 
 }
+
+
+
+
 
