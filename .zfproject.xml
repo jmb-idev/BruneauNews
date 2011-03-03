@@ -20,7 +20,12 @@
       </controllersDirectory>
       <formsDirectory enabled="false"/>
       <layoutsDirectory enabled="false"/>
-      <modelsDirectory/>
+      <modelsDirectory>
+        <modelFile modelName="User"/>
+        <modelFile modelName="Category"/>
+        <modelFile modelName="Comment"/>
+        <modelFile modelName="News"/>
+      </modelsDirectory>
       <modulesDirectory>
         <moduleDirectory moduleName="admin">
           <apisDirectory enabled="false"/>
