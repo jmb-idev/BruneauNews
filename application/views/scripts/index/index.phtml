@@ -2,8 +2,4 @@
 $this->title = "list";
 $this->headTitle($this->title);
 
-Zend_Debug::dump($this->test);
-print_r($this->test);
-foreach($this->test as $itemData) {
-	$this->placeholder('content')->append($this->newsItemSummary($itemData));
-}
+$this->placeholder('content')->append($this->newsItemList($this->test));
