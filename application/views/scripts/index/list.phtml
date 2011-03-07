@@ -1,1 +1,5 @@
-<br /><br /><center>View script for controller <b>Index</b> and script/action name <b>list</b></center>
+<?php
+$this->title = "list";
+$this->headTitle($this->title);
+
+$this->placeholder('content')->append($this->newsItemList($this->test));
