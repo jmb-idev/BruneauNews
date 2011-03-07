@@ -11,12 +11,13 @@ class IndexController extends Zend_Controller_Action
     public function indexAction()
     {
         // action body
-		$this->view->test = "Test";
+		$this->listAction();
     }
 
     public function listAction()
     {
         // action body
+		$this->view->test = 'Test';
     }
 
     public function detailAction()
