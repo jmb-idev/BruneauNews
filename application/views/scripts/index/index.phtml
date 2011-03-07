@@ -2,7 +2,8 @@
 $this->title = "list";
 $this->headTitle($this->title);
 
-//$this->content->append($this->test);
-$this->placeholder('content')->append("<div>".$this->escape($this->test)."</div>");
-$this->placeholder('login')->append('ha');
-
+Zend_Debug::dump($this->test);
+print_r($this->test);
+foreach($this->test as $itemData) {
+	$this->placeholder('content')->append($this->newsItemSummary($itemData));
+}
