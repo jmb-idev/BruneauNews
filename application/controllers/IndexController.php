@@ -16,7 +16,6 @@ class IndexController extends Zend_Controller_Action
 
     public function listAction()
     {
-        // action body
 		// build some dummy data
 		$dummydata = array(
 			array(
@@ -40,10 +39,6 @@ class IndexController extends Zend_Controller_Action
         // action body
     }
 
-
 }
-
-
-
 
 
