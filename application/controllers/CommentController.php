@@ -14,7 +14,7 @@ class CommentController extends Zend_Controller_Action
 
         $result = $db->query($select);
 
-		$comments = new Application_Models_Db_Table_Comment($db);
+		$comments = new Application_Model_Db_Table_Comment($db);
 
 		$rowset = $comments->fetchAll();
 
