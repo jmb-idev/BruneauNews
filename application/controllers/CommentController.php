@@ -10,7 +10,7 @@ class CommentController extends Zend_Controller_Action
         $db = $bootstrap->getResource('db');
 
         $select=$db->select();
-        $select->from('Comment');
+        $select->from('comment');
 
         $result = $db->query($select);
 
