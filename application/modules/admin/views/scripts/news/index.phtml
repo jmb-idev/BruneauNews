@@ -1,5 +1,3 @@
 <?php
-$this->title = 'new article';
-$this->headTitle($this->title);
 
-echo $this->form;
+echo $this->partialLoop('partials/editlist.phtml', $this->articleList);

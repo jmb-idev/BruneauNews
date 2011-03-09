@@ -17,7 +17,16 @@ class Application_Model_Db_Table_News extends Zend_Db_Table_Abstract{
 		//Zend_Debug::dump($this->fetchAll()); die();
 	}
 
-	public function getDetail() {
+	public function getEditList() {
+		$select = $this->getDefaultAdapter()->select();
+		$select->from('news', array('id', 'title'));
+		//Zend_Debug::dump($this->getDefaultAdapter()->fetchAll($select)); die();
+		return $this->getDefaultAdapter()->fetchAll($select);
+	}
+
+	public function getDetail($id) {
+		return $this->find($id)->current();
+		//return $this->fetchRow('id = '.$id);
 	}
 
 	public function storeNews() {
