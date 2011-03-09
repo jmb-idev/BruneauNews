@@ -49,6 +49,12 @@ class IndexController extends Zend_Controller_Action
 		$this->_forward('index', 'comment');
     }
 
+	public function logoutAction() {
+		$auth = Zend_Auth::getInstance();
+		$auth->clearIdentity();
+		$this->_redirect('/');
+	}
+
 }
 
 

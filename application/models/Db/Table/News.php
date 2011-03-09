@@ -13,7 +13,7 @@ class Application_Model_Db_Table_News extends Zend_Db_Table_Abstract{
 		$select->from('news')->joinLeft('user', 'news.userId = user.id', array('firstName', 'surName'));
 		//echo $select; die();
 		//Zend_Debug::dump($this->fetchAll('SELECT `news`.* FROM `news`')); die();
-		Zend_Debug::dump($this->getDefaultAdapter()->fetchAll($select)); die();
+		return $this->getDefaultAdapter()->fetchAll($select);
 		//Zend_Debug::dump($this->fetchAll()); die();
 	}
 
