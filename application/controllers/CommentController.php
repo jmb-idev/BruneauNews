@@ -6,6 +6,7 @@ class CommentController extends Zend_Controller_Action
     public function init()
     {
         /* Initialize action controller here */
+		/*
         $bootstrap = Zend_Controller_Front::getInstance()->getParam('bootstrap');
         $db = $bootstrap->getResource('db');
 
@@ -24,13 +25,18 @@ class CommentController extends Zend_Controller_Action
         foreach($rowset as $row){
 			Zend_Debug::dump($row, $label=null, $echo=true);
         }
+		 */
     }
 
     public function indexAction()
     {
         // action body
+		$form = new Zend_Form();
+		$form->addElement('text', 'name');
 
+		$this->view->form = $form;
 
+		$this->renderScript('index/detail.phtml');
     }
 
 

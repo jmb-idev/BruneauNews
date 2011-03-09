@@ -7,4 +7,5 @@ if(isset($this->exception)) {
 	$this->placeholder('content')->append("<div class='errorMessage'>".$this->escape($this->exception->getMessage())."</div>");
 	$this->placeholder('content')->append("<div class='errorTrace'>".$this->escape($this->exception->getTraceAsString())."</div>");
 	$this->placeholder('content')->append("<div class='errorParams'>".$this->escape($this->exception->getParams())."</div>");
+	echo $this->placeholder('content');
 }

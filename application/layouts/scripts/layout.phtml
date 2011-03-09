@@ -12,10 +12,13 @@ echo $this->doctype(); ?>
 </head>
 <body>
 	<div id="content">
-		<?php echo $this->placeholder('content'); ?>
+		<?php echo $this->layout()->content; ?>
 	</div>
 	<div id="login">
 		<?php echo $this->placeholder('login'); ?>
+	</div>
+	<div id='messages'>
+		<?php echo Zend_Debug::dump($this->messages); ?>
 	</div>
 </body>
 </html>
