@@ -4,7 +4,7 @@ class Application_Model_Db_Table_User extends Zend_Db_Table_Abstract{
 	protected $_rowClass = 'User';
 
 	public function init() {
-		Zend_Debug::dump($this->info()); die();
+		//Zend_Debug::dump($this->info()); die();
 	}
 
 	public function isValidUser(array $data) {
@@ -20,5 +20,11 @@ class Application_Model_Db_Table_User extends Zend_Db_Table_Abstract{
 			return true;
 		}
 		return false;
+	}
+
+	public function getList() {
+		$select = $this->getDefaultAdapter()->select();
+		$select->from('user');
+		return $this->getDefaultAdapter()->fetchAll($select);
 	}
 }
