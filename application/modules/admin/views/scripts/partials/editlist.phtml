@@ -1,5 +1,5 @@
 <div class='articleItem'>
 <div class='title'><?php echo $this->title; ?></div>
-<div class='edit'><a href='/admin/news/edit/id/<?php echo $this->id; ?>'>edit</a></div>
-<div class='delete'><a href='/admin/news/delete/id/<?php echo $this->id; ?>'>delete</a></div>
+<div class='edit'><a href='<?php echo $this->url(array('action'=>'edit','id'=>$this->id));?>'>edit</a></div>
+<div class='delete'><a href='<?php echo $this->url(array('action'=>'delete','id'=>$this->id));?>'>delete</a></div>
 </div>
