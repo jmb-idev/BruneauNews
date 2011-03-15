@@ -34,7 +34,7 @@ class Admin_NewsController extends Zend_Controller_Action
 				$this->_redirect('/admin/news');
 			}
 		}
-
+		$this->view->headTitle('New News');
 		$this->view->form = $form;
     }
 
@@ -60,6 +60,7 @@ class Admin_NewsController extends Zend_Controller_Action
 		$content = $table->getDetail($id);
 		//Zend_Debug::dump($content); die();
 		$form->populate($content->toArray());
+		$this->view->headTitle = 'Edit News';
 		$this->view->form = $form;
 		$this->renderScript('news/new.phtml');
 	}
