@@ -8,17 +8,17 @@ echo $this->doctype(); ?>
 <head>
     <?php echo $this->headMeta(); ?>
     <?php echo $this->headTitle(); ?>
-	<?php echo $this->headLink()->prependStylesheet($this->baseUrl().'/css/brunews.css'); ?>
+	<?php echo $this->headLink()->prependStylesheet($this->baseUrl().'css/brunews.css'); ?>
 </head>
 <body>
-	<div id="content">
-		<?php echo $this->layout()->content; ?>
-	</div>
 	<div id="login">
 		<?php echo $this->placeholder('login'); ?>
 	</div>
+	<div id="content">
+		<?php echo $this->layout()->content; ?>
+	</div>
 	<div id='messages'>
-		<?php echo Zend_Debug::dump($this->messages); ?>
+		<?php echo $this->messages; ?>
 	</div>
 </body>
 </html>

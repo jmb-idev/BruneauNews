@@ -12,9 +12,10 @@ class Admin_NewsController extends Zend_Controller_Action
     }
 
 	public function indexAction() {
-		$table = new Application_Model_Db_Table_News();
+		//$table = new Application_Model_Db_Table_News();
 		//Zend_Debug::dump($table->getEditList()); die();
-		$this->view->articleList = $table->getEditList();
+		//$this->view->articleList = $table->getEditList();
+		echo 'blaap';
 	}
 
     public function newAction()

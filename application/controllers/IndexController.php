@@ -11,33 +11,36 @@ class IndexController extends Zend_Controller_Action
     public function indexAction()
     {
         // action body
-		//$this->listAction();
 		$this->_forward('list');
-    }
+	}
 
     public function listAction()
     {
 		// build some dummy data
-
-		/*$dummydata = array(*/
-			//array(
-				//'title' => 'test 1',
-				//'author' => 'myTest',
-				//'date' => '2010-03-07 16:28:25',
-				//'content' => 'Dit is een test 1',
-			//),
-			//array(
-				//'title' => 'test 2',
-				//'author' => 'myTest',
-				//'date' => '2010-03-07 16:28:36',
-				//'content' => 'Dit is een test 2',
-			//),
-		//);
-		/*$this->view->test = $dummydata;*/
-
+/*
+		$dummydata = array(
+			array(
+				'title' => 'test 1',
+				'author' => 'myTest',
+				'date' => '2010-03-07 16:28:25',
+				'content' => 'Dit is een test 1',
+			),
+			array(
+				'title' => 'test 2',
+				'author' => 'myTest',
+				'date' => '2010-03-07 16:28:36',
+				'content' => 'Dit is een test 2',
+			),
+		);
+		$this->view->test = $dummydata;
+		Zend_Debug::dump($this->view->test);
+*/		
+  		//Zend_Debug::dump($this->view->baseUrl());
+		//die();  	
 		$news = new Application_Model_Db_Table_News();
 		$this->view->test = $news->getList();
-		//Zend_Debug::dump($news->getList()->toArray());
+		
+		//Zend_Debug::dump($this->view->test);
 		//die();
     }
 

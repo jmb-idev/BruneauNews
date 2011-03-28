@@ -1,9 +1,9 @@
 <?php
 $newsItemSummary = "<div class='newsItemSummary'>";
-$newsItemSummary .= "<div class='titlebar'>".
+$newsItemSummary .= "<div class='newsItemTitlebar'>".
 	"<div class='title'>".$this->title."</div>".
 	"<div class='author'>".$this->firstName.' '.$this->surName."</div>".
-	"<div class='date'>".$this->date($this->postDate)."</div>".
+	"<div class='date'>".$this->date($this->postTime)."</div>".
 	"</div>";
 $newsItemSummary .= "<div class='content'>".$this->content."</div>";
 $newsItemSummary .= "</div>";
