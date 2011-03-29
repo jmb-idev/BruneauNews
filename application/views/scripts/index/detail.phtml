@@ -1,4 +1,11 @@
 <?php
-echo $this->tekst;
+//echo $this->detail;
+//Zend_Debug::dump($this->detail);
+echo "<div class='title'>";
+echo $this->detail->title;
+echo "</div>";
+echo "<div class='content'>";
+echo nl2br($this->detail->content);
+echo "</div>";
 echo "<br />";
 echo $this->form;

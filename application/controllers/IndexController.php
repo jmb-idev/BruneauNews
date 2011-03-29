@@ -6,6 +6,8 @@ class IndexController extends Zend_Controller_Action
     public function init()
     {
         /* Initialize action controller here */
+		$this->news = new Application_Model_Db_Table_News();
+
 		$content = "<a href='/admin' title='admin'>admin</a>";
 		$this->view->placeholder('menu')->set($content);
     }
@@ -18,16 +20,13 @@ class IndexController extends Zend_Controller_Action
 
     public function listAction()
     {
-		$news = new Application_Model_Db_Table_News();
-		$this->view->test = $news->getList();
+		$this->view->test = $this->news->getList();
     }
 
     public function detailAction()
     {
-        // action body
-		$detail = 'tekst';
-		$this->view->tekst = $detail;
-		$this->_forward('index', 'comment');
+		$id = intval($this->_request->getParam('id', 0));
+		$this->view->detail = $this->news->getDetail($id);
     }
 
 	public function logoutAction() {
