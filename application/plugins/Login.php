@@ -4,11 +4,15 @@ class Application_Plugin_Login extends Zend_Controller_Plugin_Abstract {
 	public function routeShutdown(Zend_Controller_Request_Abstract $request) {
 		$table = new Application_Model_Db_Table_User();
 
-		$requestRoute = array(
-			'module' => $request->getModuleName(),
-			'controller' => $request->getControllerName(),
-			'action' => $request->getActionName()
-		);
+		$requestRoute = array();
+		if($request->getModuleName() != 'default') {
+			$requestRoute['module'] = $request->getModuleName();
+			if($request->getControllerName() != 'index')
+				$requestRoute['controller'] = $request->getControllerName();
+			if($request->getActionName() != 'index')
+				$requestRoute['action'] = $request->getActionName();
+		}
+
 		$layout = Zend_Layout::getMvcInstance();
 		$view = $layout->getView();
 		$auth = Zend_Auth::getInstance();
@@ -23,10 +27,6 @@ class Application_Plugin_Login extends Zend_Controller_Plugin_Abstract {
 				if($form->isValid($data)) {
 					$table = new Application_Model_Db_Table_User();
 					$table->isValidUser($data);
-					foreach($requestRoute as $key => $val) {
-						if($val == 'index' || $val == 'default')
-							unset($requestRoute[$key]);
-					}
 					header("Location: /".implode('/',array_values($requestRoute)));
 				}
 			}
