@@ -23,6 +23,10 @@ class Application_Plugin_Login extends Zend_Controller_Plugin_Abstract {
 				if($form->isValid($data)) {
 					$table = new Application_Model_Db_Table_User();
 					$table->isValidUser($data);
+					foreach($requestRoute as $key => $val) {
+						if($val == 'index' || $val == 'default')
+							unset($requestRoute[$key]);
+					}
 					header("Location: /".implode('/',array_values($requestRoute)));
 				}
 			}
