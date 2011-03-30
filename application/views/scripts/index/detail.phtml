@@ -9,5 +9,11 @@ $newsItemDetail .= "<div class='content'>".nl2br($this->detail['content'])."</di
 $newsItemDetail .= "</div>";
 echo $newsItemDetail;
 
-echo $this->form;
+$newsItemComments = "<div class='newsItemComments'>";
 
+$newsItemComments .= "<div class='newsItemNewComment'>";
+$newsItemComments .= "<div class='title'>Add a new comment</div>";
+$newsItemComments .= $this->form;
+$newsItemComments .= "</div>";
+$newsItemComments .= "</div>";
+echo $newsItemComments;

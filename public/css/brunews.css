@@ -33,7 +33,7 @@ body{
 }
 
 .newsItemTitlebar{
-	border-bottom:solid 1px #000;
+	background-color: #ddd;
 	padding: 5px;
 	margin-bottom: 5px;
 	height: 20px;
@@ -53,6 +53,39 @@ body{
 	color: #aaa;
 }
 
+/*
 .newsItemSummary .content{
-	/*background-color: yellow;*/
+	background-color: yellow;
+}
+*/
+
+.newsItemComments {
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.newsItemNewComment {
+	border: 1px solid black;
+	padding: 2px;
+}
+
+.newsItemNewComment .title {
+	background-color: #ddd;
+	border: 1px solid black;
+	padding: 2px;
+	font-weight: bold;
+}
+
+/* Comment Form */
+#commentForm-label, #commentForm-content {
+	display: none;
+}
+
+.newsItemNewComment input{
+	width: 98%;
+}
+
+.newsItemNewComment textarea {
+	height: 150px;
+	width: 98%;
 }

@@ -34,11 +34,10 @@ class CommentController extends Zend_Controller_Action
 		$form = new Zend_Form();
 		$form->addElement('text', 'name');
 
-		$this->view->form = $form;
+		$this->view->form = new Application_Form_Comment();
 
 		$this->renderScript('index/detail.phtml');
     }
-
 
 }
 
