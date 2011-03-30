@@ -7,6 +7,8 @@ class Admin_NewsController extends Zend_Controller_Action
     public function init()
     {
         /* Initialize action controller here */
+		$content = "<a href='/admin' title='admin'>admin</a>";
+		$this->view->placeholder('menu')->set($content);
 		$this->flashMessenger = new Zend_Controller_Action_Helper_FlashMessenger();
 		$this->view->messages = $this->flashMessenger->getMessages();
     }
