@@ -5,7 +5,7 @@ $newsItemSummary .= "<div class='newsItemTitlebar'>".
 	"<div class='author'>".$this->firstName.' '.$this->surName."</div>".
 	"<div class='date'>".$this->date($this->postTime)."</div>".
 	"</div>";
-$newsItemSummary .= "<div class='content'>".$this->content."</div>";
+$newsItemSummary .= "<div class='content'>".nl2br($this->content)."</div>";
 $newsItemSummary .= "</div>";
 echo $newsItemSummary;
 

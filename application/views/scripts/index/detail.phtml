@@ -1,11 +1,13 @@
 <?php
-//echo $this->detail;
-//Zend_Debug::dump($this->detail);
-echo "<div class='title'>";
-echo $this->detail->title;
-echo "</div>";
-echo "<div class='content'>";
-echo nl2br($this->detail->content);
-echo "</div>";
-echo "<br />";
+$newsItemDetail = "<div class='newsItemDetail'>";
+$newsItemDetail .= "<div class='newsItemTitlebar'>".
+	"<div class='title'>".$this->detail['title']."</div>".
+	"<div class='author'>".$this->detail['firstName'].' '.$this->detail['surName']."</div>".
+	"<div class='date'>".$this->date($this->detail['postTime'])."</div>".
+	"</div>";
+$newsItemDetail .= "<div class='content'>".nl2br($this->detail['content'])."</div>";
+$newsItemDetail .= "</div>";
+echo $newsItemDetail;
+
 echo $this->form;
+
