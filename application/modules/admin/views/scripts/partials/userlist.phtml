@@ -1,9 +1,11 @@
-<tr class='userLine'>
-<td class='role'><?php echo $this->role; ?></td>
-<td class='userName'><?php echo $this->userName; ?></td>
-<td class='email'><?php echo $this->email; ?></td>
-<td class='firstName'><?php echo $this->firstName; ?></td>
-<td class='surName'><?php echo $this->surName; ?></td>
-<td class='edit'><a href='/admin/user/edit/id/<?php echo $this->id; ?>'>edit</a></td>
-<td class='delete'><a href='/admin/user/delete/id/<?php echo $this->id; ?>'>delete</a></td>
-</tr>
+<?php
+$userline = "<tr class='userLine'>".
+	"<td class='role'>".$this->role."</td>".
+	"<td class='userName'>".$this->userName."</td>".
+	"<td class='email'>".$this->email."</td>".
+	"<td class='firstName'>".$this->firstName."</td>".
+	"<td class='surName'>".$this->surName."</td>".
+	"<td class='controls'><a href='/admin/user/edit/id/".$this->id."'>edit</a></td>".
+	"<td class='controls'><a href='/admin/user/delete/id/".$this->id."'>delete</a></td>".
+	"</tr>";
+echo $userline;

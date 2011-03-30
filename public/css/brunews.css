@@ -89,3 +89,17 @@ body{
 	height: 150px;
 	width: 98%;
 }
+
+.adminUser {
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.userList {
+	width: 100%;
+	border: 1px solid black;
+}
+
+.userList th, .userList td {
+	padding: 2px;
+}

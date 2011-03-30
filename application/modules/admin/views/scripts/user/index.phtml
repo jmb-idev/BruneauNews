@@ -1,11 +1,17 @@
-<table border=1>
-<tr class='userLine'>
-<th class='role'>Role</th>
-<th class='userName'>User name</th>
-<th class='email'>E-mail</th>
-<th class='firstName'>First Name</th>
-<th class='surName'>Surname</th>
-<th colspan=2>
-</tr>
-<?php echo $this->partialLoop('partials/userlist.phtml', $this->userlist);?>
-</table>
+<?php
+$userlist = "<div class='adminUser'>";
+$userlist .= "<div><a href='/admin/user/create'>create new user</a></div>";
+$userlist .= "<table class='userList'>";
+$userlist .= "<tr class='userLine'>".
+	"<th class='role'>Role</th>".
+	"<th class='userName'>Username</th>".
+	"<th class='email'>Email</th>".
+	"<th class='firstName'>First Name</th>".
+	"<th class='surName'>Last Name</th>".
+	"<th class='controls' colspan=2></th>".
+	"</tr>";
+$userlist .= $this->partialLoop('partials/userlist.phtml', $this->userlist);
+$userlist .= "</table>";
+$userlist .= "</div>";
+echo $userlist;
+
