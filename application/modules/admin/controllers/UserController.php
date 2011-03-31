@@ -66,8 +66,11 @@ class Admin_UserController extends Zend_Controller_Action
 	public function deleteAction()
 	{
 		$id = $this->_request->getParam('id',0);
-		Zend_Debug::dump($id);
-		$this->_forward('index');
+		if($id>=0) {
+			$userTable = new Application_Model_Db_Table_User();
+			$userTable->delete('id = '.$id);
+		}
+		$this->_redirect('admin/user');
 	}
 
 
