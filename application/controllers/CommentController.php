@@ -30,13 +30,27 @@ class CommentController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
-		$form = new Application_Form_Comment();
+		// auth stuff
+		$auth = Zend_Auth::getInstance();
+		$ident = null;
+		if($auth->hasIdentity())
+			$ident = $auth->getIdentity();
+
+		// comments
+		$commentTable = new Application_Model_Db_Table_Comment();
+		//Zend_Debug::dump($commentTable->getList($this->view->newsId));
+		$this->view->comments = $commentTable->getList($this->view->newsId);
+
+		// new comment
+		$form = new Application_Form_Comment(array(
+			'userId' => !empty($ident) ? $ident->id : $ident,
+			'newsId' => $this->view->newsId,
+		));
 		if($this->_request->isPost()){
-			//if($form->isValid($this->_request->getPost())) {
-				//$commentTable = new Application_Model_Db_Table_Comment();
-				//$commentTable->insert($form->getValues());
-			//}
+			//Zend_Debug::dump('you posted a comment');
+			if($form->isValid($this->_request->getPost())) {
+				$commentTable->insert($form->getValues());
+			}
 		}
 
 		$this->view->form = $form;

@@ -1,0 +1,7 @@
+<?php
+$newsComment = "<div class='newsComment'>";
+$newsComment .= "<div class='author'>".$this->firstName." ".$this->surName." ".$this->date($this->postTime)."</div>";
+$newsComment .= "<div class='comment'>".nl2br($this->content)."</div>";
+$newsComment .= "</div>";
+echo $newsComment;
+

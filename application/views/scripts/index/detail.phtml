@@ -10,7 +10,7 @@ $newsItemDetail .= "</div>";
 echo $newsItemDetail;
 
 $newsItemComments = "<div class='newsItemComments'>";
-
+$newsItemComments .= $this->partialLoop('partials/commentitem.phtml', $this->comments);
 $newsItemComments .= "<div class='newsItemNewComment'>";
 $newsItemComments .= "<div class='title'>Add a new comment</div>";
 $newsItemComments .= $this->form;

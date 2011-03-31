@@ -24,10 +24,33 @@ class Application_Form_Comment extends Zend_Form {
 	}
 
 	public function init() {
-		$this->addElement('hidden', 'commentForm', array('value' => 'BrunewsCommentForm'));
 		$this->addElement('hidden', 'id', array('value' => $this->_id));
-		$this->addElement('hidden', 'userId', array('value' => $this->_userId));
-		$this->addElement('hidden', 'newsId', array('value' => $this->_newsId));
+		$this->addElement('hidden',
+			'userId',
+			array(
+				'value' => $this->_userId,
+				'required' => true,
+				'validators' => array(
+					array(
+						'NotEmpty',
+						false,
+						array(
+							'messages' => array(
+								'isEmpty' => "You have to be logged on to post a comment"
+							)
+						)
+					)
+				)
+
+			)
+		);
+		$this->addElement('hidden',
+			'newsId',
+			array(
+				'value' => $this->_newsId,
+				'required' => true
+			)
+		);
 		/*
 		$this->addElement('text',
 			'title',

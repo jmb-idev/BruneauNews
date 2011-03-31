@@ -26,7 +26,7 @@ class IndexController extends Zend_Controller_Action
     public function detailAction()
     {
 		$id = intval($this->_request->getParam('id', 0));
-		$this->view->articleId = $id;
+		$this->view->newsId = $id;
 		$this->view->detail = $this->news->getDetail($id);
 		$this->_forward('index', 'comment');
     }

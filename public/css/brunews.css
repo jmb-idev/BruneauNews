@@ -64,6 +64,27 @@ body{
 	padding: 5px;
 }
 
+.newsComment {
+	position: relative;
+	border: 1px solid black;
+	padding: 2px;
+	margin: 2px;
+}
+
+.newsComment .author {
+	position: absolute;
+	right: 2px;
+	top: 2px;
+	height: 12px;
+	font-style:italic;
+	color: #aaa;
+	font-size: xx-small;
+}
+
+.newsComment .comment {
+	margin-top: 15px;
+}
+
 .newsItemNewComment {
 	border: 1px solid black;
 	padding: 2px;
