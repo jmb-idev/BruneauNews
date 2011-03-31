@@ -20,6 +20,14 @@ class Application_Form_User extends Zend_Form {
 				'required' => true
 			)
 		);
+		$this->addElement('text', 'role' ,array(
+				'label' => 'role',
+				'validators' => array(
+					array('Alnum', false)
+				),
+				'required' => true
+			)
+		);
 		$this->addElement('text', 'firstName', array(
 				'label' => 'First name',
 				'validators' => array(
