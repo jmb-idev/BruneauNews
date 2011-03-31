@@ -18,7 +18,7 @@ class Admin_UserController extends Zend_Controller_Action
 		// action body
 		$user = new Application_Model_Db_Table_User();
 		$this->view->userlist = $user->getList();
-		//Zend_Debug::dump($this->view->userlist);
+		Zend_Debug::dump($this->view->userlist);
 	}
 
 	public function createAction()
@@ -34,7 +34,7 @@ class Admin_UserController extends Zend_Controller_Action
 
 	public function editAction()
 	{
-		$form =$this->view->form = new Application_Form_User();
+		$form =$this->view->form = new Application_Form_User(array('edit' => true));
 		$userTable = new Application_Model_Db_Table_User();
 
 		if($this->_request->isPost()){
