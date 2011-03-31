@@ -18,7 +18,7 @@ class Application_Plugin_Login extends Zend_Controller_Plugin_Abstract {
 		$auth = Zend_Auth::getInstance();
 		if($auth->hasIdentity()) {
 			$ident = $auth->getIdentity();
-			$content = 'welcome '.$ident->surName;
+			$content = 'welcome '.$ident->firstName." ".$ident->surName;
 			$content .= "&nbsp;<a href='/index/logout'>logout</a>";
 		} else {
 			$form = new Application_Form_Login();
