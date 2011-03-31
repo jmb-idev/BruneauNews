@@ -103,3 +103,10 @@ body{
 .userList th, .userList td {
 	padding: 2px;
 }
+
+#footer {
+	font-size: xx-small;
+	margin-top: 10px;
+	text-align: right;
+	color: #aaa;
+}
