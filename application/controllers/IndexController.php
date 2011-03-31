@@ -28,13 +28,7 @@ class IndexController extends Zend_Controller_Action
 		$id = intval($this->_request->getParam('id', 0));
 		$this->view->articleId = $id;
 		$this->view->detail = $this->news->getDetail($id);
-		//Zend_Debug::dump($this->view->detail);
-		//die();
 		$this->_forward('index', 'comment');
-		/*
-		$id = intval($this->_request->getParam('id', 0));
-		$this->view->detail = $this->news->getDetail($id);
-		 */
     }
 
 	public function logoutAction() {

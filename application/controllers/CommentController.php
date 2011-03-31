@@ -31,11 +31,15 @@ class CommentController extends Zend_Controller_Action
     public function indexAction()
     {
         // action body
-		$form = new Zend_Form();
-		$form->addElement('text', 'name');
+		$form = new Application_Form_Comment();
+		if($this->_request->isPost()){
+			//if($form->isValid($this->_request->getPost())) {
+				//$commentTable = new Application_Model_Db_Table_Comment();
+				//$commentTable->insert($form->getValues());
+			//}
+		}
 
-		$this->view->form = new Application_Form_Comment();
-
+		$this->view->form = $form;
 		$this->renderScript('index/detail.phtml');
     }
 

@@ -77,7 +77,7 @@ body{
 }
 
 /* Comment Form */
-#commentForm-label, #commentForm-content {
+#commentForm-label, #commentForm-content, #id-label, #id-content, #userId-label, #userId-content, #newsId-label, #newsId-content {
 	display: none;
 }
 
